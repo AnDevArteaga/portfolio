@@ -1,103 +1,187 @@
-import Image from "next/image";
+import { Github, Linkedin, Mail } from "lucide-react";
+import TechStack from "@/components/tech-stack";
+import ProjectCard from "@/components/project-card";
+import HeroSection from "@/components/hero-section";
+import ContactForm from "@/components/contact-form";
+
+import medicall24 from "@/assets/project_medicall24.jpg";
+import mapa from "@/assets/map-monteria-all-major-minor-260nw-2341297771.webp";
+import wayuu from "@/assets/wayu.png";
+import kogui from "@/assets/kogi-colombia-tradition.jpg";
+import gemelo from "@/assets/Group17.png";
+import sgames21 from "@/assets/Group22.png";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <HeroSection />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Projects Section */}
+      <section
+        id="projects"
+        className="py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto"
+      >
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-bold mb-4 relative inline-block">
+            <span className="relative z-10">Proyectos</span>
+            <span className="absolute bottom-0 left-0 w-full h-3 bg-blue-500/20 -z-10 transform -rotate-1">
+            </span>
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Una selección de mis proyectos más recientes y destacados.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <ProjectCard
+            title="Comerción web para empresa de telemedicina"
+            description="Una plataforma de comercio electrónico de servicios de telemedicina"
+            tags={["React js", "Redux", "Tailwind CSS", "Supabase"]}
+            image={medicall24}
+            link="https://appmedicall24.com/"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <ProjectCard
+            title="Mapa Sociolinguistico de Montería"
+            description="Analizar y visualizar las variaciones lingüísticas en diferentes zonas de la ciudad"
+            tags={[
+              "Next.js",
+              "Create My Map",
+              "Tailwind CSS",
+              "Flask",
+              "MySQL",
+            ]}
+            image={mapa}
+            link="https://mapa-sociolinguistico.vercel.app/"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <ProjectCard
+            title="Traductor Español-Wayuu "
+            description="Aplicación web para traducir textos de español a wayuu y viceversa, utilizando modelos de aprendizaje automático."
+            tags={["Vue js", "Flask", "Scikit-learn", "TensorFlow"]}
+            image={wayuu}
+            link="https://traductor-wayuu.vercel.app/"
           />
-          Go to nextjs.org →
-        </a>
+          <ProjectCard
+            title="Diccionario de la lengua de los Kogui"
+            description="Diccionario para preservar y facilitar el aprendizaje de su lengua, permitiendo la búsqueda y exploración de palabras, oraciones e información"
+            tags={["Next js", "Flask", "MySQL", "Tailwind CSS", "TypeScript"]}
+            image={kogui}
+            link="https://diccionario-kogui-two.vercel.app/"
+          />
+          <ProjectCard
+            title="Gemelo Digital Académico"
+            description="Gemelo Digital para realizar predicciones de rendimiento académico, utilizando modelos de aprendizaje automático, asi como la simulación de posibles escenarios futuros."
+            tags={["React js", "Flask", "MySQL", "Scikit-learn"]}
+            image={gemelo}
+            link="https://dtwins.vercel.app/"
+          />
+          <ProjectCard
+            title="Sistema tutor Sgames21 Desktop"
+            description="Sistema tutor para escritorio, que desarrolla el fortalecimiento de las competencias del siglo 21, especificamente la de pensamiento crítico - En Construcción."
+            tags={["React js", "Express", "PostgreSQL", "TypeScript"]}
+            image={sgames21}
+            link="http://24.199.103.0/"
+          />
+        </div>
+      </section>
+
+      {/* Tech Stack Section */}
+      <section
+        id="skills"
+        className="py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto bg-gray-800/50"
+      >
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-bold mb-4 relative inline-block">
+            <span className="relative z-10">Tecnologías</span>
+            <span className="absolute bottom-0 left-0 w-full h-3 bg-green-500/20 -z-10 transform -rotate-1">
+            </span>
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Herramientas y tecnologías con las que trabajo.
+          </p>
+        </div>
+
+        <TechStack />
+      </section>
+
+      {/* Contact Section */}
+      <section
+        id="contact"
+        className="py-20 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto"
+      >
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-bold mb-4 relative inline-block">
+            <span className="relative z-10">Contacto</span>
+            <span className="absolute bottom-0 left-0 w-full h-3 bg-purple-500/20 -z-10 transform -rotate-1">
+            </span>
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            ¿Interesado en trabajar juntos? ¡Hablemos!
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="bg-gray-800/50 p-8 rounded-xl shadow-xl transform transition-all duration-300 hover:scale-[1.02]">
+            <ContactForm />
+          </div>
+
+          <div className="flex flex-col justify-center">
+            <div className="space-y-6">
+              <div className="flex items-center space-x-4">
+                <div className="bg-blue-500/20 p-3 rounded-full">
+                  <Mail className="w-6 h-6 text-blue-400" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">Correo</h3>
+                  <p className="text-gray-300">
+                    aarteagaramos@correo.unicordoba.edu.co
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <div className="bg-purple-500/20 p-3 rounded-full">
+                  <Linkedin className="w-6 h-6 text-purple-400" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">LinkedIn</h3>
+                  <a
+                    href="https://www.linkedin.com/in/andres-felipe-arteaga-ramos-38b67a272/"
+                    className="text-gray-300 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    linkedin.com/in/andres-felipe-arteaga-ramos
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <div className="bg-green-500/20 p-3 rounded-full">
+                  <Github className="w-6 h-6 text-green-400" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">GitHub</h3>
+                  <a
+                    href="https://github.com/AnDevArteaga"
+                    className="text-gray-300 hover:text-white transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    github.com/AnDevArteaga
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-4 text-center text-gray-400 border-t border-gray-800">
+        <p>
+          © {new Date().getFullYear()} Andrés Arteaga 
+        </p>
       </footer>
-    </div>
+    </main>
   );
 }
