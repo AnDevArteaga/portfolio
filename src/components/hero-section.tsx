@@ -97,7 +97,7 @@ export default function HeroSection() {
           >
             <h2 className="text-xl md:text-2xl font-medium text-gray-300 mb-4">Desarrollador Web</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Con mas de 3 años de experiencias digitales excepcionales con las últimas tecnologías web. Apasionado
+              Con mas de 4 años de experiencias digitales excepcionales con las últimas tecnologías web. Apasionado
               por el diseño y la funcionalidad.
             </p>
           </motion.div>
@@ -118,7 +118,7 @@ export default function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-gray-600 text-gray-800 hover:bg-gray-800 hover:text-white"
+              className="border-gray-600 text-gray-800 hover:bg-gray-800 hover:text-white text-white"
               onClick={scrollToProjects}
             >
               Ver Proyectos
